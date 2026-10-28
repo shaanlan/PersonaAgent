@@ -1,3 +1,6 @@
+# OS files
+.DS_Store
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
@@ -51,6 +54,10 @@ coverage.xml
 .hypothesis/
 .pytest_cache/
 cover/
+
+# persona-chat runtime data (sqlite db, chroma persist, local index)
+data/
+index-artifact/
 
 # Translations
 *.mo

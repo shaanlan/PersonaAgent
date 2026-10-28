@@ -1,0 +1,31 @@
+# 本地依赖 overlay（仅开发/单机测试），原样落地自 docs/design.md §13.2.2
+#
+# 生产已有 MySQL 时不要启动 mysql 服务；远程大模型 + 远程 embedding 时不需要 Ollama。
+services:
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: personality
+      MYSQL_USER: persona_chat
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  ollama:
+    image: ollama/ollama:latest
+    environment:
+      OLLAMA_NUM_PARALLEL: "1"
+      OLLAMA_KEEP_ALIVE: "30m"
+      OLLAMA_MAX_LOADED_MODELS: "2"
+    volumes:
+      - ollama_data:/root/.ollama
+
+volumes:
+  mysql_data:
+  ollama_data:

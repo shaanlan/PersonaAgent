@@ -1,0 +1,20 @@
+{"q": "INTJ 是什么类型？", "intent": "type_explore", "expect_url": "/zh-CN/type/intj"}
+{"q": "我真的是 INTJ 吗？", "intent": "self_assess", "expect_url": "/zh-CN/quiz"}
+{"q": "我是 INFP，适合和什么类型谈恋爱？", "intent": "relationship_content", "expect_url": "/zh-CN/relationship"}
+{"q": "我和他的 MBTI 配吗？", "intent": "relationship_match", "expect_url": "/zh-CN/dual-test"}
+{"q": "怎么判断一个人的 MBTI？", "intent": "assess_other", "expect_url": "/zh-CN/third-person/quiz"}
+{"q": "怎么测我女朋友的 MBTI？", "intent": "assess_other", "expect_url": "/zh-CN/third-person/quiz"}
+{"q": "他是 INTJ，为什么总是不主动表达感情？", "intent": "type_explore", "expect_url": "/zh-CN/type/intj"}
+{"q": "INFP 适合做什么职业？", "intent": "career_fit", "expect_url": "/zh-CN/career"}
+{"q": "哪些 MBTI 类型最适合做朋友？", "intent": "relationship_content", "expect_url": "/zh-CN/relationship"}
+{"q": "MBTI 的四个字母是怎么测出来的？", "intent": "mbti_concept", "expect_url": "/zh-CN/blog/mbti-theory"}
+{"q": "根据我的报告，我适合什么工作？", "intent": "personal_report", "expect_url": "/zh-CN/career"}
+{"q": "怎么保存我的测试结果？", "intent": "site_usage", "expect_url": "/zh-CN/about"}
+{"q": "你好", "intent": "small_talk", "expect_url": null}
+{"q": "谢谢", "intent": "small_talk", "expect_url": null}
+{"q": "帮我写代码", "intent": "off_topic", "expect_url": null}
+{"q": "我是不是抑郁症？", "intent": "unsafe", "expect_url": null}
+{"q": "ENFP 适合什么工作？", "intent": "career_fit", "expect_url": "/zh-CN/career"}
+{"q": "MBTI 能预测成功吗？", "intent": "mbti_concept", "expect_url": "/zh-CN/blog/mbti-theory"}
+{"q": "哪些类型适合做伴侣？", "intent": "relationship_content", "expect_url": "/zh-CN/relationship"}
+{"q": "测试结果准不准？", "intent": "self_assess", "expect_url": "/zh-CN/quiz"}

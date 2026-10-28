@@ -1,0 +1,25 @@
+# persona-chat 基础 Compose（单机/双节点通用），原样落地自 docs/design.md §13.2.1
+#
+# 使用：
+#   cp .env.example .env          # 按需修改
+#   docker compose up -d          # 生产：只起 persona-chat（连外部 MySQL）
+#   docker compose -f docker-compose.yml -f docker-compose.local.yml up -d
+#                                 # 本地测试：叠加 mysql + ollama（见 §13.2.2 / README）
+services:
+  persona-chat:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      # 单机：127.0.0.1；双节点：新节点私网 IP
+      - "${CHAT_BIND_ADDR:-127.0.0.1}:8090:8090"
+    volumes:
+      - ${INDEX_ARTIFACT_DIR:-./index-artifact}/chroma:/data/chroma
+      - ${INDEX_ARTIFACT_DIR:-./index-artifact}/index:/data/index:ro
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8090/healthz"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
